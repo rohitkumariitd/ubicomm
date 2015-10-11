@@ -21,6 +21,5 @@ urlpatterns = [
     url(r'^polls/', include('polls.urls', namespace="polls")),
     url(r'^ubic/', include('ubic.urls', namespace="ubic")),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^social/', include('socialregistration.urls',namespace = 'socialregistration')),
     url(r'^accounts/', include('allauth.urls')),
 ]

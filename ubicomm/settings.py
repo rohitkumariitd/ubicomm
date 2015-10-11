@@ -41,9 +41,6 @@ INSTALLED_APPS = (
     'ubic',
     'homepage',
     'django.contrib.sites',
-    'socialregistration',
-    ##'socialregistration.contrib.facebook',
-    'socialregistration.contrib.openid',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -96,8 +93,6 @@ DATABASES = {
 
 AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
-        'socialregistration.contrib.facebook.auth.FacebookAuth',
-        'socialregistration.contrib.openid.auth.OpenIDAuth',
         'allauth.account.auth_backends.AuthenticationBackend',
 )
 
@@ -125,7 +120,7 @@ SOCIALACCOUNT_PROVIDERS = \
             'gender',
             'updated_time'],
         'EXCHANGE_TOKEN': True,
-        'LOCALE_FUNC': 'path.to.callable',
+        'LOCALE_FUNC': lambda request: 'en_US',
         'VERIFIED_EMAIL': False,
         'VERSION': 'v2.4'}}
 # Internationalization
