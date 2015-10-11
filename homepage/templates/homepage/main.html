@@ -1,0 +1,15 @@
+{% if ubic_list %}
+    <ul>
+    {% for ubicinstance in ubic_list %}
+        <li><a href="{% url 'ubic:detail' ubicinstance.id %}">{{ ubicinstance.start_date }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No ubics are available.</p>
+{% endif %}
+{% load openid %}
+{% openid_form 'https://www.google.com/accounts/o8/id' 'login/with/google.png' %}
+{% load socialaccount %}
+<a href="{% provider_login_url "facebook" method="oauth2" %}">Facebook OAuth2</a>
+{% load account %}
+{% user_display user %}

@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<div class="container-fluid">
+	<img src="{{ ubicinstance.ubic.image_link }}" class="img-responsive" alt="Cinque Terre" height="142" width="142">
+  <label >name: {{ ubicinstance.ubic.name }}</label><br /><br />
+<label >image_link: {{ ubicinstance.ubic.image_link }}</label><br /><br />
+<label >description: {{ ubicinstance.ubic.description }}</label><br /><br />
+<label >duration: {{ ubicinstance.ubic.duration }}</label><br /><br />
+<label >type: {{ ubicinstance.ubic.type }}</label><br /><br />
+<label >user: {{ ubicinstance.ubic.user }}</label><br /><br />
+<label >instance num: {{ ubicinstance.instance_index }}</label><br /><br />
+<label >instance start: {{ ubicinstance.start_date }}</label><br /><br />
+<label >registrations: {{ ubicinstance.registrations.all }}</label><br /><br />
+<label >price: INR {{ ubicinstance.price }}</label><br /><br />
+<label >updated description: {{ ubicinstance.updated_description }}</label><br /><br />
+
+{% for week in ubicinstance.weeklyschedule_set.all %}
+	<label >week_index: {{ week.week_index }} </label>
+	<label >title: {{ week.title }}<label><br/>
+{% endfor %}
+</div>
